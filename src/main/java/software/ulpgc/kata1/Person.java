@@ -10,11 +10,20 @@ public class Person {
         this.name = name;
         this.birthday = birthday;
     }
+
     public String getName() {
         return name;
     }
 
     public LocalDate getBirthday() {
         return birthday;
+    }
+
+    public int getAge(){
+        return toYears(LocalDate.now().toEpochDay() - birthday.toEpochDay());
+    }
+
+    private int toYears(long days) {
+        return (int) (days / 365.25);
     }
 }
