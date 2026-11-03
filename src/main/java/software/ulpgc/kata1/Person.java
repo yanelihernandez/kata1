@@ -23,7 +23,8 @@ public class Person {
         return toYears(LocalDate.now().toEpochDay() - birthday.toEpochDay());
     }
 
+    public static final double DAYS_PER_YEAR = 365.25;
     private int toYears(long days) {
-        return (int) (days / 365.25);
+        return (int) (days / DAYS_PER_YEAR);
     }
 }
